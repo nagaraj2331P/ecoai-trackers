@@ -1,6 +1,5 @@
 'use client';
 import { useState, useEffect, useRef } from 'react';
-
 interface Message {
   role: 'user' | 'ai';
   content: string;
