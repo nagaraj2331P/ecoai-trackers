@@ -12,11 +12,10 @@ export async function POST(req: NextRequest) {
     model: "gpt-3.5-turbo",
     messages: [{ role: "user", content: prompt }],
   });
-
-  return NextResponse.json({ result: response.choices[0].message.content });
+  const content = completion.choices[0].message.content;
 }
 await addDoc(collection(db, "queries"), {
   prompt,
-  response: content,
+  response: completion.choices[0].message.content
   createdAt: Timestamp.now()
 });
