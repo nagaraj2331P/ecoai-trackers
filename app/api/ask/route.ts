@@ -1,21 +1,27 @@
+import { NextResponse } from 'next/server';
+import { db } from '@/lib/firebase';
+import { addDoc, collection, Timestamp } from 'firebase/firestore';
 import OpenAI from 'openai';
-import { NextRequest, NextResponse } from 'next/server';
-import { db } from "@/lib/firebase";
-import { collection, addDoc, Timestamp } from "firebase/firestore";
 
-const openai = new OpenAI({apiKey:process.env.OPENAI_API_KEY});
+const openai = new OpenAI({
+  apiKey: process.env.OPENAI_API_KEY,
+});
 
-export async function POST(req: NextRequest) {
+export async function POST(req: Request) {
   const { prompt } = await req.json();
 
-  const response = await openai.chat.completions.create({
-    model: "gpt-3.5-turbo",
-    messages: [{ role: "user", content: prompt }],
+  const completion = await openai.chat.completions.create({
+    model: 'gpt-3.5-turbo',
+    messages: [{ role: 'user', content: prompt }],
   });
+
   const content = completion.choices[0].message.content;
+
+  await addDoc(collection(db, 'queries'), {
+    prompt,
+    response: content,
+    createdAt: Timestamp.now(),
+  });
+
+  return NextResponse.json({ result: content });
 }
-await addDoc(collection(db, "queries"), {
-  prompt,
-  response: completion.choices[0].message.content, // ✅ Add comma here
-  createdAt: Timestamp.now()
-});
