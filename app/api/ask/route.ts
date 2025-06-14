@@ -16,6 +16,6 @@ export async function POST(req: NextRequest) {
 }
 await addDoc(collection(db, "queries"), {
   prompt,
-  response: completion.choices[0].message.content
+  response: completion.choices[0].message.content, // ✅ Add comma here
   createdAt: Timestamp.now()
 });
