@@ -1,8 +1,8 @@
+
 "use client";
-
 import { motion } from "framer-motion";
-
-export default function SideAnimations() {
+export default function SideAnimations()
+{
   return (
     <>
       {/* Left floating leaf */}
@@ -21,3 +21,5 @@ export default function SideAnimations() {
     </>
   );
 }
+
+ 

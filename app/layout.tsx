@@ -2,7 +2,7 @@ import './globals.css';
 import Link from 'next/link';
 import { Analytics } from '@vercel/analytics/react';
 import Footer from '@/components/Footer';
-import SideAnimations from "@/components/sideAnimations";
+import SideAnimations from "@/components/framer-motion";
 import Banner from "@/components/Banner";
 
 export const metadata = {
