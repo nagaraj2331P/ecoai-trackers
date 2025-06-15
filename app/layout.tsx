@@ -3,7 +3,6 @@ import Link from 'next/link';
 import { Analytics } from '@vercel/analytics/react';
 import Footer from '@/components/Footer';
 import SideAnimations from "@/components/framer-motion";
-import Banner from "@/components/Banner";
 
 export const metadata = {
   title: 'EcoAI Sustainability Tracker'
@@ -32,9 +31,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <SideAnimations />
       {/* Rest of the content */}
     </div>
-
-    <div className="bg-white py-12 flex justify-around flex-wrap gap-6">
-      <Banner />
+ <div className="w-full h-60 bg-green-700 flex items-center justify-center relative shadow-md">
+      <h1 className="text-white text-4xl md:text-6xl font-bold z-10">
+        EcoAI Sustainability Tracker
+      </h1>
     </div>
     </body>
     </html>
