@@ -19,7 +19,7 @@ export default function EcoTip() {
   }, []);
 
   return (
-    <div className="p-4 bg-green-100 rounded">
+    <div className="p-4 bg-green-100 rounded gap-6">
       🌱 Eco Tip: {[
         'Turn off lights when not in use.',
         'Use reusable water bottles.',

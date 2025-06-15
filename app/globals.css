@@ -2,25 +2,73 @@
 
 /* 🌿 Base theme variables */
 :root {
-  --background: #9bff9b; /* Light green background */
-  --foreground: #000000; /* Black text */
+  --background: #0c580c; /* Light green background */
+  --foreground: #ffffff; /* Black text */
 }
 
 /* 🌙 Dark mode colors */
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0f3d0f;
-    --foreground: #0f3f03;
+    --background: #50b048;
+    --foreground: #040630;
   }
 }
+
 
 /* 🌿 Background texture & font */
 body {
   background-color: var(--background);
-  background-image: url('C:\Users\ADMIN\OneDrive\Desktop\photo-1679966519774-bcefa8da9bce.avif'); /* Place this image in your /public folder */
+  background-image:('C:\Users\ADMIN\OneDrive\Desktop\green.jpg'); /* Place this image in your /public folder */
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+/* globals.css */
+
+/* Reset box model */
+* {
+  box-sizing: border-box;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Content wrapper pushes footer to bottom if not full height */
+.main-content {
+  flex: 1;
+}
+
+/* Eco suggestions section */
+.eco-suggestions {
+  background-color: #023e13; /* light green */
+  padding: 2rem 1rem;
+}
+
+.eco-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.eco-card {
+  background-color: rgb(201, 25, 25);
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  text-align: center;
+  padding: 1rem;
+}
+
+.eco-card img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
 }

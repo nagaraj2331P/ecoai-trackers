@@ -39,10 +39,10 @@ export default function AskAi() {
   }, [messages]);
 
   return (
-    <div className="p-4 bg-white rounded shadow-md max-w-md mx-auto">
+    <div className="p-8 bg-white rounded shadow-md max-w-md mx-auto gap-19">
       <h2 className="text-lg font-bold mb-4">Ask EcoAI</h2>
 
-      <div className="space-y-2 mb-4 max-h-64 overflow-y-auto border p-2">
+      <div className="space-y-4 mb-4 max-h-64 overflow-y-auto border p-2">
         {messages.map((msg, idx) => (
           <div key={idx} className={`text-sm ${msg.role === 'ai' ? 'text-green-700' : 'text-blue-700'}`}>
             <strong>{msg.role}:</strong> {msg.content}
@@ -55,7 +55,7 @@ export default function AskAi() {
           ref={inputRef}
           value={input}
           onChange={(e) => setInput(e.target.value)}
-          placeholder="Type your question"
+          placeholder="Ask about recycling, energy, etc."
           className="flex-1 border px-2 py-1 rounded"
         />
         <button
