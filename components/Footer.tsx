@@ -23,7 +23,7 @@ const ecoSuggestions = [
 
 export default function Footer() {
   return (
-    <footer className="bg-green-100 py-30 px-30">
+    <footer className="bg-green-100 py-40 px-40">
       <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 text-center">
         {ecoSuggestions.map((item, index) => (
           <div key={index} className="flex flex-col items-center">
