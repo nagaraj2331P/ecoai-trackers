@@ -36,7 +36,7 @@ export default function Footer() {
           </div>
         ))}
       </div>
-      <p className="text-center mt-8 text-Blue-600 text-xs font-bold">
+      <p className="text-center mt-8 text-Blue-600 text-1xl font-bold">
         🌍CREATED BY NAGARAJ🌍
       </p>
     </footer>
